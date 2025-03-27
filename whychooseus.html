@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Why Choose Us – NextGen MEPfp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <!-- Top Navigation -->
+    <div class="top-nav">
+      <!-- Left: Logo -->
+      <div class="nav-left">
+        <a href="index.html">
+          <img src="next-gen-final.jpeg" alt="Logo" style="height:40px;" />
+        </a>
+      </div>
+      <!-- Nav links -->
+      <div class="nav-links" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="whychooseus.html" class="active">Why Choose Us</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="top-right-contact">
+        <a href="index.html" class="btn-more">
+          Call us: 877-307-8131 <br/> 
+          email: info@nextgenmepfp.com
+        </a>
+      </div>
+    <!-- Hamburger for mobile -->
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+  </div>
+
+
+    <div class="hero-container">
+      <div class="hero-bg"></div>
+      <!-- This div is the red overlay -->
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <h1 class="hero-title">Why Choose Us</h1>
+          <h2 class="hero-subtitle">We Stand out in Low Voltage MEP & Blueprints Engineering</h2>
+
+      <section class="why-chooseus-images-section">
+        <div class="why-images-grid">
+          <div class="why-image-item">
+            <img src="1why.jpg" alt="Blueprint-Ready">
+            <div class="why-overlay">
+              <h4>Blueprint-Ready</h4>
+             
+            </div>
+          </div>
+          <div class="why-image-item">
+            <img src="2why.jpg" alt="Low Voltage Experts">
+            <div class="why-overlay">
+              <h4>Low Voltage Experts</h4>
+              
+            </div>
+          </div>
+          <div class="why-image-item">
+            <img src="3why.jpg" alt="Available Worldwide">
+            <div class="why-overlay">
+              <h4>Available Worldwide</h4>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="footer-content">
+      <h3>NEXTGEN MEPfp DESIGN &amp; CONSULTANTS, LLC</h3>
+      <p>4095 Southern BLVD Suite #207, WEST PALM BEACH, FL 33406</p>
+      <p>Phone: 877-307-8131 &nbsp;|&nbsp; Email: info@nextgenmepfp.com</p>
+      <p>&copy; 2025 NEXTGEN MEPfp. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Dialogflow Messenger -->
+  <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+  <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+  <df-messenger
+    location="us-central1"
+    project-id="nextgen-454401"
+    agent-id="09844661-f51b-4342-8ee3-0edb56e00c91"
+    language-code="en"
+    max-query-length="-1">
+    <df-messenger-chat-bubble chat-title="NextGen Chatbot"></df-messenger-chat-bubble>
+  </df-messenger>
+  
+  <!-- Inline style for chatbot -->
+  <style>
+    df-messenger {
+      z-index: 999;
+      position: fixed;
+      --df-messenger-font-color: #000;
+      --df-messenger-font-family: Google Sans;
+      --df-messenger-chat-background: #f3f6fc;
+      --df-messenger-message-user-background: #d3e3fd;
+      --df-messenger-message-bot-background: #fff;
+      bottom: 16px;
+      right: 16px;
+    }
+  </style>
+
+<script>
+  // Toggle function for mobile menu
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('open');
+  }
+</script>
+</body>
+</html>

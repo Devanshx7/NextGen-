@@ -1,0 +1,537 @@
+/*************************************************************
+  GLOBAL & DESKTOP STYLES (unchanged for desktop layout)
+**************************************************************/
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  font-family: Arial, sans-serif;
+}
+
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* TOP NAV - Desktop Layout */
+.top-nav {
+  position: fixed;  /* pinned at the top */
+  top: 0;
+  width: 100%;
+  background: #fff; /* White nav background */
+  color: #000;      /* default text color black */
+  padding: 1rem;
+  display: flex;
+  justify-content: center; /* center layout on desktop */
+  align-items: center;     /* vertical centering */
+  z-index: 9999;
+  white-space: nowrap;     /* prevent wrapping */
+  overflow-x: auto;        /* enable horizontal scroll if needed */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* NAV LINKS - Desktop (show by default) */
+.nav-links {
+  margin-left: auto; /* push links to the right side */
+  display: flex;
+  gap: 1rem;         /* spacing between links */
+}
+
+    /* Hamburger hidden on desktop, shown on mobile */
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+/* By default on desktop, #mobileMenu is the nav container 
+   (same as .nav-links) and is shown */
+#mobileMenu {
+  display: flex;
+  /* add your desktop nav link styling if needed */
+}
+
+/* Desktop link styling */
+.top-nav a {
+  color: black;
+  text-decoration: none;
+  margin: 0 1.5rem;
+  font-weight: 600;
+}
+.top-nav a:hover,
+.top-nav a.active {
+  opacity: 0.8;
+}
+
+.top-right-contact {
+  position: fixed;
+  top: 120px;    /* Adjusted: try lowering this value */
+  right: 20px;  /* Distance from the right edge */
+  z-index: 10000; /* Increased z-index */
+  /* Temporary debug styles: */
+}
+    /**********************************************
+      4) REUSE/DEFINE THE .btn-more STYLE
+    **********************************************/
+    .btn-more {
+      text-decoration: none;
+      display: inline-block;
+      background: #fff;
+      color: black;
+      padding: 0.8rem 1.2rem;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+      font-size: 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Added shadow */
+    }
+    .btn-more:hover {
+      background: #f4f4f4;
+      color: #DA3A2C;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3); /* Enhanced shadow on hover */
+    }
+/* MAIN CONTAINER */
+.container {
+  position: relative;
+  width: 100%;
+}
+
+/* COLOR OVERLAY */
+.color-overlay {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: multiply;
+  z-index: 2;
+}
+
+/* GLOBAL RESETS, NAV, FOOTER, etc. can remain the same. */
+
+/* Remove or override container padding to avoid extra space */
+.container {
+  position: relative;
+  width: 100%;
+}
+
+/* HERO CONTAINER - Now a solid red background */
+.hero-container {
+  min-height: 100vh;        /* Full screen height, or use auto if you prefer */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  /* Centers content vertically */
+  text-align: center;
+  color: #fff;  
+  margin-top: 40;            /* White text on red background */
+  padding-top: 40px;        /* So text isn't hidden behind the fixed navbar */
+  box-sizing: border-box;
+  /* If you want less tall hero, remove min-height and let content define height */
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("Download\ premium\ psd\ _\ image\ of\ 5g\ network\ technology\ psd\ smart\ city\ background\ by\ Chanikarn\ Thongsupa\ about\ background\,\ blue\ background\,\ sky\,\ design\,\ and\ technology\ 2798874.jpg")
+              no-repeat center center;
+  background-size: cover;
+  z-index: 1;
+}
+
+/* A red overlay on top of the background image */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(161, 19, 0, 0.8); /* red with some transparency */
+  z-index: 2;
+}
+
+/* 3) Hero content on top of everything (text + slideshow) */
+.hero-content {
+  position: relative;
+  z-index: 3; /* above background and overlay */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 0 1rem; /* horizontal padding so text isn't flush to edges */
+}
+
+/* Tagline (Low Voltage Experts) */
+.hero-tagline {
+  font-size: 1.5rem;
+  margin-top: 3.5rem;
+}
+
+/* Main Title */
+.hero-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 5rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.9);
+}
+.hero-title .lowercase {
+  text-transform: none !important; /* override the uppercase */
+}
+
+/* Subtitle */
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  margin-top: 0.5rem;
+}
+
+/* 1) Make the slideshow wide and centered, with a 16:9 ratio */
+.slideshow-container {
+  position: relative;
+  width: 320%;
+  max-width: 1300px;       /* or larger if you want it even bigger */      /* center it, add vertical space */
+  aspect-ratio: 16 / 9;    /* forces a consistent 16:9 shape */
+  background-color: #000;  /* letterbox bars will appear black */
+  overflow: hidden;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* 2) Each slide is absolutely positioned to fill that 16:9 area */
+.slide {
+  display: none;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* 3) Show the entire image without cropping => 'contain' */
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  /* This will show black bars (letterboxing) for images 
+     that don't match 16:9 exactly, but no part is cut off. */
+}
+
+/* 4) Navigation arrows: center them vertically */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 1rem;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  background: rgba(0,0,0,0.3);
+  text-decoration: none;
+  user-select: none;
+  z-index: 10;
+}
+.prev {
+  left: 0;
+  border-radius: 0 3px 3px 0;
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+  background: rgba(0,0,0,0.6);
+}
+
+/* Optional: style the caption if you like */
+.slide-caption {
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  padding: 1rem;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+/* This parent div forcibly extends to the full viewport width */
+.partners-row-breakout {
+  position: relative;
+  margin-left: -50vw; /* shifts left half the viewport width */
+  margin-right: -50vw;/* shifts right half the viewport width */
+  width: 100vw;       /* spans the entire viewport width */
+
+  /* Optional background color if you want a red bar behind logos */
+  background-color: #DA3A2C; 
+  text-align: center; /* center the content horizontally (if needed) */
+  z-index: 99;        /* ensure it’s above other elements if needed */
+}
+
+/* The image inside goes full width (or auto) */
+.partners-row-breakout img {
+  display: block;     /* removes inline spacing */
+  width: 100%;        /* fill the breakout container */
+  height: auto;       /* maintain aspect ratio */
+  margin: 0 auto;
+}
+
+/*************************************
+  WHY CHOOSE US SECTION (desktop)
+**************************************/
+.why-choose-us {
+  position: relative;
+  background: none;
+  padding: 4rem 2rem;
+  text-align: center;
+  z-index: 3;
+  justify-content: center;
+}
+.why-container {
+  position: relative; 
+  max-width: 900px;
+  margin: 0 auto;
+}
+.why-container h2 {
+  position: absolute;
+  top: -90px;         /* For large screens, the title is moved 80px above its container's reference point */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 3rem;
+  line-height: 1.1;
+  color: #fff;
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.5), 
+    0 0 10px rgba(255, 255, 255, 0.5);
+  -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.3);
+}
+
+/* Grid for the 3 images */
+.why-images-grid {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 3 columns side by side */
+  gap: 2rem;
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-bottom: 2rem; 
+}
+
+/* Individual Image Item */
+.why-image-item {
+  position: relative;              /* Needed for overlay positioning */
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-image-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styling */
+.why-image-item img {
+  width: 100%;
+  height: 450px;
+  display: block;
+}
+
+/* Bottom Overlay with Blur Effect */
+.why-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  backdrop-filter: blur(5px);    /* Blurs background behind the overlay */
+  color: #fff;
+  box-sizing: border-box;
+}
+
+/* Overlay Text Styling */
+.why-overlay h4 {
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.why-overlay p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  color: #ddd;
+}
+
+/* Page-specific Flexbox Layout for Why Choose Us Page */
+.why-choose-us-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.why-choose-us-page .container {
+  flex: 1;
+}
+
+/* FOOTER */
+.main-footer {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  text-align: left;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+.footer-content {
+  max-width: 1100px;
+  margin: 0;
+  padding-left: 20px;
+}
+.footer-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  padding-left: 5px;
+}
+.footer-content p {
+  margin-left: 0;
+  padding-left: 5px;
+}
+@media (max-width: 600px) {
+  .top-nav {
+    justify-content: space-between; /* logo left, hamburger right */
+    padding: 2rem 1rem;
+    overflow-x: visible;
+    white-space: normal;
+    height: auto;
+  }
+  .hamburger {
+    display: block; /* show hamburger on mobile */
+  }
+  /* Hide desktop nav links by default on mobile */
+  .nav-links {
+    display: none;
+  }
+
+  /* Mobile dropdown menu pinned to viewport (fixed) */
+  #mobileMenu {
+    position: fixed;         /* changed from absolute to fixed */
+    top: 60px;               /* just below the fixed top-nav */
+    right: 1rem;
+    background: #fff;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    flex-direction: column;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    padding: 1rem;
+    z-index: 10000; /* ensure it stays on top */
+  }
+  #mobileMenu.open {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  #mobileMenu a {
+    display: block;
+    margin: 0.5rem 0;
+    color: #000;  /* black text on white background */
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+  }
+  .top-right-contact {
+    position: fixed;
+    top: 115px;    /* Adjusted: try lowering this value */
+    left: 20px;  /* Distance from the right edge */
+    z-index: 10000; /* Increased z-index */
+    /* Temporary debug styles: */
+  }
+  /* 1) Reduce big heading font sizes */
+  .hero-title, .page-title {
+    font-size: 3.5rem;   /* or whatever size you want on mobile */
+    margin: 1rem 0;
+  }
+  .hero-subtitle, .page-subtitle {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .hero-tagline{
+    font-size: 1rem;
+  }
+  /* 2) Tighten up padding in hero sections so they’re not too tall */
+  .hero-container,
+  .why-choose-us-container {
+    padding: 2rem 1rem; /* Less vertical space on mobile */
+  }
+
+  /* 3) Slideshow or large images => 100% width, auto height */
+  .slideshow-container,
+  .hero-image-container {
+    width: 100% !important;  /* fill screen width */
+    margin: 1rem auto;       /* less margin on mobile */
+  }
+  .slide img,
+  .hero-image-container img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* 4) If “Why Choose Us” has columns, stack them on mobile */
+  .why-choose-grid {
+    display: flex;       /* if it’s flex on desktop */
+    flex-wrap: wrap;
+    flex-direction: column; /* stack vertically on small screens */
+    gap: 1rem;
+  }
+  .why-choose-grid .feature-card,
+  .why-choose-grid .service-card {
+    width: 100%;         /* each item full width in a single column */
+    margin-bottom: 1rem;
+  }
+  .why-choose-grid img {
+    width: 100%;         /* images scale down */
+    height: auto;
+  }
+
+  /* 5) Partners row or logos row => also full width */
+  .partners-row,
+  .partners-row-breakout {
+    margin: 1rem 0;
+    padding: 0;
+  }
+  .partners-row img,
+  .partners-row-breakout img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* 6) Footer or other sections => smaller padding & text */
+  .main-footer {
+    padding: 1rem;
+  }
+  .main-footer p, .main-footer h3 {
+    font-size: 0.9rem;
+  }
+}
